@@ -14,7 +14,7 @@ GLfloat deltat = 0.0f;
 int startx, starty;
 
 //Zoom
-int zoomx = 0, zoomy = 0;
+int zoomy = 0;
 
 //Keyboard controls
 bool zoomActive = false;

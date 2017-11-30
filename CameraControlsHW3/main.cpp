@@ -251,12 +251,17 @@ void myMouse(int button, int state, int x, int y) {
     
     cout << modifiers << endl;
     
-    if (modifiers == GLUT_ACTIVE_SHIFT) {
+    if (modifiers & GLUT_ACTIVE_SHIFT) {
         zoomActive = true;
         zoomy = 0;
+        printf("SHIFT\n");
     }
-    
-    if (button == GLUT_LEFT_BUTTON) {
+    else if (modifiers & GLUT_ACTIVE_CTRL) {
+        printf("CTRL\n");
+    }
+    else if (modifiers & GLUT_ACTIVE_ALT) {
+        printf("ALT\n");
+    }
 
         if (state == GLUT_DOWN) {
             
@@ -271,7 +276,6 @@ void myMouse(int button, int state, int x, int y) {
             zoomActive = false;
         }
 
-    }
     
 }
 
@@ -305,7 +309,6 @@ void myMotion(int x, int y) {
     }
     
     zoomy = deltay;
-    
     
 }
 
